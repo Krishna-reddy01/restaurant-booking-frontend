@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { api, getToken, setToken, setUnauthorizedHandler } from './api'
+import { restaurant } from './restaurantInfo'
 import Login from './Login'
 import StaffPage from './Staff'
 
@@ -31,8 +32,11 @@ export default function App() {
   return (
     <>
       <header className="top">
-        <h1>Table &amp; Plate</h1>
-        <nav>
+  <div>
+    <h1>{restaurant.name}</h1>
+    <p className="muted">📍 {restaurant.location} · {restaurant.hours}</p>
+  </div>
+  <nav>
           <button className={tab === 'order' ? 'on' : ''} onClick={() => setTab('order')}>Menu &amp; order</button>
           <button className={tab === 'book' ? 'on' : ''} onClick={() => setTab('book')}>Book a table</button>
           {isStaff && (
