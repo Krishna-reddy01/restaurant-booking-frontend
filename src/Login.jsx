@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { api } from './api'
-
+import { restaurant } from "./restaurantInfo";
 export default function Login({ onLogin }) {
   const [mode, setMode] = useState('login')
   const [form, setForm] = useState({ username: '', password: '', fullName: '' })
@@ -28,7 +28,8 @@ export default function Login({ onLogin }) {
   return (
     <div className="login-page">
       <form className="panel login-card" onSubmit={submit}>
-        <h1>Table &amp; Plate</h1>
+        <h1>{restaurant.name}</h1>
+        <p>📍 {restaurant.location}</p>
         <h2>{isLogin ? 'Log in' : 'Create an account'}</h2>
 
         {!isLogin && (
