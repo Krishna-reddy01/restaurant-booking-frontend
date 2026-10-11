@@ -1,1 +1,5 @@
-Set-Content vercel.json '{ "rewrites": [ { "source": "/api/:path*", "destination": "https://restaurant-booking-backend-05xa.onrender.com/api/:path*" } ] }'
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
